@@ -1,0 +1,9 @@
+# 仅 sim1：仓库里只有 sim1/；若需多气体叠加，需自行添加 sim2、sim3 并分别跑 gaden_sim。
+playback_initial_iteration: 0
+playback_loop:
+  loop: false
+  from: 0
+  to: 0
+simulations:
+  - sim: sim1
+    gas_color: [0.0, 0.3, 1.0]

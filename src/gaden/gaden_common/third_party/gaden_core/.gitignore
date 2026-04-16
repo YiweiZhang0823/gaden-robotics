@@ -1,0 +1,9 @@
+build
+.vscode
+.cache
+bin
+
+examples/example_project/environment_configurations/**/wind
+examples/example_project/environment_configurations/**/result
+gaden_py
+*.bkp
