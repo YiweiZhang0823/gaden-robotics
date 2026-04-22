@@ -1,0 +1,2 @@
+scenario,initial_state,param_set,success,stop_reason,time_s,path_length_m,min_distance_m,min_distance_confidence,min_distance_time_s,final_distance_m,final_raw,final_margin,final_confidence,gas_msg_count,cast_steps,surge_steps,spiral_steps,theta_low,theta_mid,theta_high
+exp3_advection,manual_downwind_inside_plume,formal_exp3_downwind,0,timeout,120.000,15.8483,0.2987,0.000000,86.600,0.8254,1.853437,1.853437,0.000002,1200,85,23,0,2.885299,7.694129,13.464726

@@ -1,0 +1,13 @@
+# APPIS 2020 §4.3：定常流（steady airflow）；原文为「中央障碍」；本配置为开阔无障碍，
+# 用于学位论文「平流主导（advection-dominated）」场景。
+# 均匀风：全空间同一矢量，单帧定常（uniformWind + wind_0.csv 一行）
+models:
+  - ../../cad_models/10x6_walls.stl
+outlets_models:
+  - "!color [0.86, 0.19, 0.19, 1.00]"
+  - ../../cad_models/10x6_door_left.stl
+  - ../../cad_models/10x6_door_right.stl
+unprocessed_wind_files: ../../wind_simulations/exp3_open_steady/wind
+empty_point: [0.5, 0.95, 0]
+cell_size: 0.1
+uniformWind: true

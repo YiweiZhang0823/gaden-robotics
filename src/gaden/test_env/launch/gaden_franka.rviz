@@ -293,7 +293,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 183; 194; 217
-    Fixed Frame: base
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:

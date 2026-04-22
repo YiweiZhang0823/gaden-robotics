@@ -1,0 +1,23 @@
+# 与 Ojeda et al. APPIS 2020 §4.2 一致：同开阔场、点源；文中描述为强时变均匀流下的窄弯羽流
+source:
+  sourceType: point
+  position: [1, 4.95, 0.7]
+  gasType: 0
+deltaTime: 0.1
+windIterationDeltaTime: 1
+temperature: 298
+pressure: 1
+filamentPPMcenter: 20
+filamentInitialSigma: 10
+filamentGrowthGamma: 10
+filamentNoise_std: 0.02
+numFilaments_sec: 10
+expectedNumIterations: 600
+saveResults: true
+saveDeltaTime: 0.5
+preCalculateConcentrations: false
+# 与 `wind_simulations/dynamic/` 多帧风配合：仿真时间内按序切换风场（论文 Exp.2 时变风）
+windLooping:
+  loop: true
+  from: 0
+  to: 24

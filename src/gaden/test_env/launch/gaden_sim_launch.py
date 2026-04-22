@@ -11,6 +11,7 @@ import os
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration, OpaqueFunction
+from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterFile
@@ -35,13 +36,23 @@ def launch_arguments():
             default_value=["sim1"],
             description="name of the simulation",
         ),
+        DeclareLaunchArgument(
+            "sim_time",
+            default_value="320.0",
+            description="仿真时长（秒），应 ≥ sim.yaml 里隐含的总时长需求",
+        ),
+        DeclareLaunchArgument(
+            "use_rviz",
+            default_value="True",
+            description="是否启动 RViz；批量生成结果时可设为 False",
+        ),
     ]
 # ==========================
 
 
 def launch_setup(context, *args, **kwargs):
-    scenario = LaunchConfiguration("scenario").perform(context)
     pkg_dir = LaunchConfiguration("pkg_dir").perform(context)
+    sim_time = float(LaunchConfiguration("sim_time").perform(context).strip())
 
     params_yaml_file = os.path.join(
         pkg_dir, "ros_params", "gaden_params.yaml"
@@ -49,6 +60,7 @@ def launch_setup(context, *args, **kwargs):
 
     return [
         Node(
+            condition=IfCondition(LaunchConfiguration("use_rviz")),
             package='rviz2',
             executable='rviz2',
             name='rviz2',
@@ -72,7 +84,7 @@ def launch_setup(context, *args, **kwargs):
             name='gaden_filament_simulator',
             output='screen',
             parameters=[ParameterFile(params_yaml_file, allow_substs=True),
-                        {"sim_time": 300.0},
+                        {"sim_time": sim_time},
                         {"runRate": 0.0}
                         ]
         )

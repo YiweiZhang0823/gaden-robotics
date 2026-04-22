@@ -18,6 +18,22 @@ install(PROGRAMS scripts/publish_ee_goal.py
   DESTINATION lib/${PROJECT_NAME}
   RENAME publish_ee_goal
 )
+install(PROGRAMS scripts/open_field_build_gaden_data.sh
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME open_field_build_gaden_data
+)
+install(PROGRAMS scripts/open_field_initial_state_commands.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME open_field_initial_state_commands
+)
+install(PROGRAMS scripts/surge_cast_spiral_gsl.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME surge_cast_spiral_gsl
+)
+install(PROGRAMS scripts/gsl_supervisor_summary.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME gsl_supervisor_summary
+)
 
 install(DIRECTORY .
 DESTINATION share/${PROJECT_NAME}

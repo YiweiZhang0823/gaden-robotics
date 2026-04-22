@@ -1,0 +1,6 @@
+initial_state,label,source_relation,plume_relation,wind_relation,expected_gas_cue,trials,success_rate,mean_time_s,mean_path_m,mean_initial_dist_m,mean_min_dist_m,mean_final_raw,mean_final_conf,mean_cast_steps,mean_surge_steps,mean_spiral_steps,stop_reasons
+far_off_plume,远离气源，且离羽流边缘也有一段距离,far,outside_far_from_edge,downwind_crosswind,none_or_very_weak,1,0.00,180.2,19.72,0.83,0.71,0.00,0.00,162.0,0.0,0.0,timeout:1
+far_near_edge,远离气源，但接近羽流边缘,far,edge,downwind,weak_or_intermittent,1,1.00,156.0,7.79,0.68,0.24,9.62,0.60,65.0,38.0,36.0,distance_confidence_confirmed:1
+far_inside_plume,远离气源，但已经在羽流内部,far,inside,downwind,clear_plume_contact,1,0.00,180.0,14.08,0.55,0.09,0.00,0.00,128.0,33.0,0.0,timeout:1
+near_source_outside_plume,靠近气源，但完全在羽流外,near,outside_lateral,crosswind,none_or_very_weak,1,0.00,180.0,15.01,0.60,0.53,0.00,0.00,162.0,0.0,0.0,timeout:1
+near_source_upwind,靠近气源，且位于气源上游一侧,near,outside_upwind,upwind,none_or_very_weak,1,0.00,180.2,15.93,0.26,0.17,0.00,0.00,162.0,0.0,0.0,timeout:1

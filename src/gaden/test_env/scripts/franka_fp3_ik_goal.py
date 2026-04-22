@@ -54,8 +54,16 @@ def _load_chain() -> kdl.Chain:
 
     chain = kdl.Chain()
     for i in range(1, 8):
+        # URDF semantics are parent_link -> fixed joint origin -> joint motion -> child_link.
+        # A PyKDL Segment(Joint, Frame) applies the joint motion before the tip frame,
+        # so putting the YAML origin in the same segment makes IK/FK disagree with
+        # robot_state_publisher. Keep the fixed origin and revolute joint as separate
+        # segments so the IK target matches the actual TF tree used by the gas sensor.
         chain.addSegment(
-            kdl.Segment(kdl.Joint(kdl.Joint.RotZ), frame_from_k(kin[f"joint{i}"]))
+            kdl.Segment(kdl.Joint(kdl.Joint.Fixed), frame_from_k(kin[f"joint{i}"]))
+        )
+        chain.addSegment(
+            kdl.Segment(kdl.Joint(kdl.Joint.RotZ), kdl.Frame.Identity())
         )
     chain.addSegment(
         kdl.Segment(kdl.Joint(kdl.Joint.Fixed), frame_from_k(kin["joint8"]))

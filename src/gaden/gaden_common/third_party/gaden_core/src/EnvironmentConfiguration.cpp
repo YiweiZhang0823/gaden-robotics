@@ -1,5 +1,6 @@
 #include "gaden/EnvironmentConfiguration.hpp"
 #include <gaden/internal/PathUtils.hpp>
+#include <algorithm>
 
 namespace gaden
 {
@@ -20,6 +21,17 @@ namespace gaden
         }
 
         std::vector<std::filesystem::path> windFiles = paths::GetAllFilesInDirectory(directory / "wind");
+        // 只保留常规文件：避免目录项、断掉的符号链接等导致 parseFile → NO_FILE
+        windFiles.erase(
+            std::remove_if(
+                windFiles.begin(),
+                windFiles.end(),
+                [](std::filesystem::path const& p)
+                {
+                    std::error_code ec;
+                    return !std::filesystem::is_regular_file(p, ec);
+                }),
+            windFiles.end());
         if (windFiles.empty())
             GADEN_WARN("No wind files in directory '{}'", directory.c_str());
 
@@ -47,7 +59,10 @@ namespace gaden
             if (!environment.WriteToFile(path / "OccupancyGrid3D.csv"))
                 return false;
 
-            std::filesystem::create_directory(path / "wind");
+            // 先清空 wind/：colcon symlink-install 可能留下指向 src 的断链，ofstream 无法得到真实 wind_iteration_* 文件
+            if (std::filesystem::exists(path / "wind"))
+                std::filesystem::remove_all(path / "wind");
+            std::filesystem::create_directories(path / "wind");
             if (!windSequence.WriteToFiles(path / "wind", "wind_iteration"))
                 return false;
 

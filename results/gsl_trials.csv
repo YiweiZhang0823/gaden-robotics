@@ -1,0 +1,6 @@
+scenario,initial_state,param_set,success,stop_reason,time_s,path_length_m,min_distance_m,final_raw,final_margin,final_confidence,cast_steps,surge_steps,spiral_steps,theta_low,theta_mid,theta_high
+exp3_advection,near_source_upwind,debug_near_source,0,interrupted,6.499,2.5619,0.5487,0.000000,0.000000,0.000000,4,0,0,0.500000,2.000000,5.000000
+exp3_advection,near_source_upwind,debug_near_source,0,timeout,60.006,15.0580,0.6596,0.000000,0.000000,0.000000,52,0,0,0.500000,2.000000,5.000000
+manual,manual,baseline,0,no_gas_messages,4.201,0.0000,inf,0.000000,0.000000,0.000000,0,0,0,0,0.500000,2.000000,5.000000
+exp3_advection,manual_downwind_inside_plume,debug_exp3_downwind,1,source_confirmed,93.000,15.5938,0.3488,0.000000,0.000000,0.000003,930,73,10,0,3.125191,8.333842,14.584224
+exp3_advection,manual_downwind_inside_plume,,,,,,debug_exp3_downwind,1,debug_distance_reached,22.200,2.4801,inf,0.3455,0.000029,22.200,0.3455,3.949882,2.723237,0.000029,22.386384,222,16,4,0,3.357958,8.954553,15.670468

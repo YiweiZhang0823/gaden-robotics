@@ -19,6 +19,7 @@
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>simulated_gas_sensor</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>olfaction_msgs</exec_depend>
   <exec_depend>tf2_geometry_msgs</exec_depend>
 
   <export>
