@@ -1,0 +1,7 @@
+scenario,initial_state,initial_label,plume_relation,wind_relation,param_set,trials,success_rate,mean_time_s,mean_path_m,mean_min_distance_m,mean_final_distance_m,mean_final_raw,mean_final_confidence,mean_max_margin_seen,mean_cast_steps,mean_surge_steps,mean_spiral_steps,stop_reasons
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,edge,downwind,sensitivity_baseline,1,1.00,84.2,5.082,0.230,0.230,34.219,0.619,81.796,51.0,24.0,0.0,distance_confidence_confirmed:1
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,edge,downwind,sensitivity_conf_low,1,1.00,120.4,6.848,0.223,0.223,89.839,0.313,115.919,72.0,35.0,0.0,distance_confidence_confirmed:1
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,edge,downwind,sensitivity_conf_high,1,0.00,180.2,11.934,0.757,1.102,5.817,0.000,65.274,110.0,50.0,0.0,timeout:1
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,edge,downwind,sensitivity_threshold_low,1,1.00,149.6,10.005,0.736,1.118,5.567,0.680,69.182,62.0,34.0,39.0,stop_mode_confirmed:1
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,edge,downwind,sensitivity_loss_tolerant,1,0.00,180.0,5.361,0.665,1.111,2.718,0.000,28.660,56.0,106.0,0.0,timeout:1
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,edge,downwind,sensitivity_spiral_easy,1,0.00,180.2,14.414,0.632,1.125,3.417,0.000,77.935,102.0,60.0,0.0,timeout:1

@@ -1,0 +1,7 @@
+scenario,initial_state,initial_label,plume_relation,wind_relation,param_set,trials,success_rate,mean_time_s,mean_path_m,mean_min_distance_m,mean_final_distance_m,mean_final_raw,mean_final_confidence,mean_max_margin_seen,mean_cast_steps,mean_surge_steps,mean_spiral_steps,stop_reasons
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,inside,downwind,sensitivity_baseline,1,1.00,71.0,4.307,0.159,0.159,9.047,0.610,15.195,44.0,19.0,0.0,distance_confidence_confirmed:1
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,inside,downwind,sensitivity_conf_low,1,0.00,180.0,7.670,0.273,0.280,14.129,0.171,18.243,79.0,81.0,0.0,timeout:1
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,inside,downwind,sensitivity_conf_high,1,0.00,180.0,8.612,0.299,0.389,8.014,0.080,17.006,92.0,68.0,0.0,timeout:1
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,inside,downwind,sensitivity_threshold_low,1,0.00,180.2,15.730,0.149,0.307,0.000,0.000,12.160,145.0,16.0,0.0,timeout:1
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,inside,downwind,sensitivity_loss_tolerant,1,0.00,180.2,11.049,0.263,0.673,0.000,0.000,20.888,97.0,36.0,28.0,timeout:1
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,inside,downwind,sensitivity_spiral_easy,1,0.00,180.2,6.785,0.273,0.321,4.814,0.022,19.852,51.0,49.0,60.0,timeout:1

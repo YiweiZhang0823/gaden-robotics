@@ -18,6 +18,7 @@ __pycache__/
 
 # Local scratch / snapshots (optional)
 terminal*_full_snapshot.txt
+results/*.log
 
 # Accidental system packages in ws root
 *.deb

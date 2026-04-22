@@ -34,6 +34,22 @@ install(PROGRAMS scripts/gsl_supervisor_summary.py
   DESTINATION lib/${PROJECT_NAME}
   RENAME gsl_supervisor_summary
 )
+install(PROGRAMS scripts/gsl_sensitivity_commands.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME gsl_sensitivity_commands
+)
+install(PROGRAMS scripts/gsl_sensitivity_summary.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME gsl_sensitivity_summary
+)
+install(PROGRAMS scripts/gsl_repeatability_commands.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME gsl_repeatability_commands
+)
+install(PROGRAMS scripts/gsl_repeatability_summary.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME gsl_repeatability_summary
+)
 
 install(DIRECTORY .
 DESTINATION share/${PROJECT_NAME}

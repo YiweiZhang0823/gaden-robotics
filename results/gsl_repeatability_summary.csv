@@ -1,0 +1,5 @@
+scenario,initial_state,initial_label,param_set,trials,successes,success_rate,mean_time_s,std_time_s,mean_path_m,std_path_m,mean_min_distance_m,std_min_distance_m,mean_final_distance_m,std_final_distance_m,mean_final_confidence,std_final_confidence,mean_final_raw,mean_cast_steps,mean_surge_steps,mean_spiral_steps,stop_reasons
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,sensitivity_baseline,3,1,0.33,170.9,12.9,11.177,3.273,0.438,0.133,0.837,0.416,0.334,0.426,31.162,103.0,49.7,0.7,timeout:2; distance_confidence_confirmed:1
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,sensitivity_loss_tolerant,3,2,0.67,102.0,56.7,4.512,1.539,0.327,0.233,0.346,0.253,0.416,0.294,66.337,35.3,56.3,0.0,timeout:1; distance_confidence_confirmed:2
+exp2_time_varying,far_near_edge,远离气源，但接近羽流边缘,sensitivity_threshold_low,3,3,1.00,106.2,35.5,6.504,2.416,0.254,0.074,0.293,0.102,0.690,0.108,13.163,44.0,33.0,17.3,distance_confidence_confirmed:2; stop_mode_confirmed:1
+exp3_advection,far_inside_plume,远离气源，但已经在羽流内部,sensitivity_baseline,3,0,0.00,180.2,0.0,16.237,1.891,0.076,0.031,0.209,0.020,0.000,0.000,0.000,154.7,7.7,0.0,timeout:3
