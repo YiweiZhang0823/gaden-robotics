@@ -50,6 +50,10 @@ install(PROGRAMS scripts/gsl_repeatability_summary.py
   DESTINATION lib/${PROJECT_NAME}
   RENAME gsl_repeatability_summary
 )
+install(PROGRAMS scripts/gsl_randomized_initial_state_commands.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME gsl_randomized_initial_state_commands
+)
 
 install(DIRECTORY .
 DESTINATION share/${PROJECT_NAME}

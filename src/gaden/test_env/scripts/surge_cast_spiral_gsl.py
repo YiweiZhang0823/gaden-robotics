@@ -904,20 +904,36 @@ class SurgeCastSpiralGSL(Node):
         )
         base_pose = self.initial_state_meta.get("base_pose", ["", "", ""])
         ee_target = self.initial_state_meta.get("ee_target", ["", "", ""])
+        nominal_target = self.initial_state_meta.get("nominal_ee_target", ["", "", ""])
+        sigma_xyz = self.initial_state_meta.get("sampling_sigma_xyz", ["", "", ""])
+        offset_xyz = self.initial_state_meta.get("sampling_offset_xyz", ["", "", ""])
         row = {
             "scenario": self.scenario_key,
             "initial_state": self.initial_state_key,
+            "parent_initial_state": str(self.initial_state_meta.get("parent_initial_state", "")),
             "initial_label": str(self.initial_state_meta.get("label", "")),
             "source_relation": str(self.initial_state_meta.get("source_relation", "")),
             "plume_relation": str(self.initial_state_meta.get("plume_relation", "")),
             "wind_relation": str(self.initial_state_meta.get("wind_relation", "")),
             "expected_gas_cue": str(self.initial_state_meta.get("expected_gas_cue", "")),
+            "sample_id": str(self.initial_state_meta.get("sample_id", "")),
+            "sampling_seed": str(self.initial_state_meta.get("sampling_seed", "")),
+            "sampling_mode": str(self.initial_state_meta.get("sampling_mode", "")),
             "base_x": str(base_pose[0]) if len(base_pose) > 0 else "",
             "base_y": str(base_pose[1]) if len(base_pose) > 1 else "",
             "base_yaw": str(base_pose[2]) if len(base_pose) > 2 else "",
             "initial_ee_x": str(ee_target[0]) if len(ee_target) > 0 else "",
             "initial_ee_y": str(ee_target[1]) if len(ee_target) > 1 else "",
             "initial_ee_z": str(ee_target[2]) if len(ee_target) > 2 else "",
+            "nominal_ee_x": str(nominal_target[0]) if len(nominal_target) > 0 else "",
+            "nominal_ee_y": str(nominal_target[1]) if len(nominal_target) > 1 else "",
+            "nominal_ee_z": str(nominal_target[2]) if len(nominal_target) > 2 else "",
+            "sampling_sigma_x": str(sigma_xyz[0]) if len(sigma_xyz) > 0 else "",
+            "sampling_sigma_y": str(sigma_xyz[1]) if len(sigma_xyz) > 1 else "",
+            "sampling_sigma_z": str(sigma_xyz[2]) if len(sigma_xyz) > 2 else "",
+            "sampling_offset_x": str(offset_xyz[0]) if len(offset_xyz) > 0 else "",
+            "sampling_offset_y": str(offset_xyz[1]) if len(offset_xyz) > 1 else "",
+            "sampling_offset_z": str(offset_xyz[2]) if len(offset_xyz) > 2 else "",
             "param_set": self.param_set,
             "success": int(self.success),
             "stop_reason": self.stop_reason,

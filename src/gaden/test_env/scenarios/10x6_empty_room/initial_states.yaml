@@ -47,6 +47,9 @@ scenarios:
         expected_gas_cue: weak_or_intermittent
         ee_target: [1.35, 4.35, 0.65]
         base_pose: [0.8, 4.65, 0.0]
+        sampling_defaults:
+          mode: box
+          sigma_xyz: [0.05, 0.05, 0.02]
       far_inside_plume:
         label: "远离气源，但已经在羽流内部"
         source_relation: far
@@ -55,6 +58,9 @@ scenarios:
         expected_gas_cue: clear_plume_contact
         ee_target: [1.35, 4.95, 0.65]
         base_pose: [0.8, 4.65, 0.0]
+        sampling_defaults:
+          mode: box
+          sigma_xyz: [0.04, 0.04, 0.02]
       near_source_outside_plume:
         label: "靠近气源，但完全在羽流外"
         source_relation: near
@@ -97,6 +103,9 @@ scenarios:
         expected_gas_cue: weak_or_intermittent
         ee_target: [1.45, 4.25, 0.65]
         base_pose: [0.8, 4.65, 0.0]
+        sampling_defaults:
+          mode: box
+          sigma_xyz: [0.05, 0.05, 0.02]
       far_inside_plume:
         label: "远离气源，但已经在羽流内部"
         source_relation: far
@@ -105,6 +114,9 @@ scenarios:
         expected_gas_cue: clear_plume_contact
         ee_target: [1.45, 5.0, 0.65]
         base_pose: [0.8, 4.65, 0.0]
+        sampling_defaults:
+          mode: box
+          sigma_xyz: [0.04, 0.04, 0.02]
       near_source_outside_plume:
         label: "靠近气源，但完全在羽流外"
         source_relation: near
@@ -149,6 +161,9 @@ scenarios:
         expected_gas_cue: weak_or_intermittent
         ee_target: [1.55, 4.55, 0.65]
         base_pose: [0.8, 4.65, 0.0]
+        sampling_defaults:
+          mode: box
+          sigma_xyz: [0.04, 0.04, 0.02]
       far_inside_plume:
         label: "远离气源，但已经在羽流内部"
         source_relation: far
@@ -157,6 +172,9 @@ scenarios:
         expected_gas_cue: clear_plume_contact
         ee_target: [1.55, 4.95, 0.65]
         base_pose: [0.8, 4.65, 0.0]
+        sampling_defaults:
+          mode: box
+          sigma_xyz: [0.04, 0.03, 0.02]
       near_source_outside_plume:
         label: "靠近气源，但完全在羽流外"
         source_relation: near
